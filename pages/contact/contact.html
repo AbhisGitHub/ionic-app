@@ -8,15 +8,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-	<!-- <ion-list>
-		<ion-list-header>Follow us on Twitter</ion-list-header>
-		<ion-item>
-			<ion-icon name="ionic" item-left></ion-icon>
-			@ionicframework
-		</ion-item>
-	</ion-list> -->
-	<!-- <ion-card>
-		<ion-card-header>Contact Us</ion-card-header> -->
+
 	<form #contform="ngForm" (ngSubmit)="SaveCont(contform)">
 		<ion-item>
 			<ion-label floating>Name</ion-label>
@@ -26,7 +18,7 @@
 		</ion-item>
 		<ion-item>
 			<ion-label floating>Email</ion-label>
-			<ion-input type="email" [(ngModel)]="contact.email" value="" name="email" required></ion-input>
+			<ion-input type="email" [(ngModel)]="contact.email" value="" name="email" required email></ion-input>
 		</ion-item>
 		<ion-item>
 			<ion-label floating>Contact No</ion-label>
@@ -39,7 +31,7 @@
 			<ion-input type="text" [(ngModel)]="contact.address" value="" name="address" required></ion-input>
 		</ion-item>
 		<!-- <ion-item> -->
-		<button ion-button type="submit"
+		<button ion-button type="submit" [disabled]="!contform.valid"
         >Submit</button>
 		<!-- </ion-item> -->
 
